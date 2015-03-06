@@ -349,7 +349,7 @@ Map = (function () {
 
 
         style: function (feature) { 
-            return { fillColor: Map.getColor(feature.properties.count), weight: 2, opacity: 1, color: 'white', dashArray: '3', fillOpacity: 0.7 }; 
+            return { fillColor: Map.getColor(feature.properties.count), weight: 2, opacity: 1, color: 'white', dashArray: '1', fillOpacity: 0.7 }; 
         }
     }
 })();
