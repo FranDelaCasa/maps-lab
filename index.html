@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/map.css">
-		<link rel="stylesheet" type="text/css" href="css/leaflet.css">
-		<link rel="stylesheet" type="text/css" href="css/markerCluster.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="scripts/leaflet.js"></script>
-		<script src="scripts/leaflet.markercluster.js"></script>
-		<script src="data/barcelona.js"></script>
-		<!--<script src="scripts/values.js"></script>-->
-		<script src="scripts/map.js"></script>
-	</head>
-	<body>
-		<div id='container'>
-			<div id='peninsula'></div>
-			<div id='canarias'></div>
-		</div>	
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/map.css">
+        <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+        <link rel="stylesheet" type="text/css" href="css/markerCluster.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="scripts/leaflet.js"></script>
+        <script src="scripts/leaflet.markercluster.js"></script>
+        <script src="data/barcelona.js"></script>
+        <!--<script src="scripts/values.js"></script>-->
+        <script src="scripts/map.js"></script>
+    </head>
+    <body>
+        <div id='container'>
+            <div id='peninsula'></div>
+            <div id='canarias'></div>
+        </div>  
 
-		<script type="text/javascript">
-			var configPeninsulaMap = {
-				divId : 'peninsula',
-		        zoomable: true,
-		        latitude: 40.4964,
-		        longitude: -7.5129,
-		        pinable: false,
-		        drawable: false,
-		        hasPois: false,
-		        zoom: 6
-			};
-			var peninsulaMap = Map.CreateMap(configPeninsulaMap);
+        <script type="text/javascript">
+            var configPeninsulaMap = {
+                divId : 'peninsula',
+                zoomable: true,
+                latitude: 41.3854,
+                longitude: 2.17754,
+                zoom: 14,
+                pinable: false,
+                drawable: false,
+                hasPois: false,
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                dashArray: '2',
+                fillOpacity: 0.7
+            };
+            var peninsulaMap = Map
+                .CreateMap(configPeninsulaMap);
 
-			L.geoJson(barna).addTo(peninsulaMap);
-		</script>
-	</body>
+            L.geoJson(barna)
+                .addTo(peninsulaMap);
+        </script>
+    </body>
 </html>
