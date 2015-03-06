@@ -36,7 +36,12 @@
             var peninsulaMap = Map
                 .CreateMap(configPeninsulaMap);
 
-			L.geoJson(barna, { style: Map.style }).addTo(peninsulaMap);
+			Map.SetGeoJSon(L.geoJson(
+				barna
+				, { 
+					style: Map.style
+					, onEachFeature: Map.onEachFeature 
+				}).addTo(peninsulaMap));
 					</script>
 				</body>)
 </html>
