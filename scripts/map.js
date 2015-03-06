@@ -340,6 +340,16 @@ Map = (function () {
             CreateMarkerClusterGroup(map, id);
             AddMarkerClusterGroupToMap(map);
             SetCenterFromClusterSelected(map);
+        },
+
+
+        getColor: function(d) {
+           return d > 2000 ? '#800026' : d > 1750 ? '#BD0026' : d > 1500 ? '#E31A1C' : d > 1250 ? '#FC4E2A' : d > 1000 ? '#FD8D3C' : d > 750 ? '#FEB24C' : d > 500 ? '#FED976' : '#FFEDA0'; 
+        },
+
+
+        style: function (feature) { 
+            return { fillColor: Map.getColor(feature.properties.count), weight: 2, opacity: 1, color: 'white', dashArray: '3', fillOpacity: 0.7 }; 
         }
     }
 })();
