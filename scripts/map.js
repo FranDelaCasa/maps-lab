@@ -9,6 +9,7 @@ Map = (function () {
     var _latLngToGo;
     var _popup;
     var _openPropertyInfoBubble = false;
+    var _geojson;
 
     var _layerTypes = {
         NORMAL: "normal.day",
@@ -350,6 +351,48 @@ Map = (function () {
 
         style: function (feature) { 
             return { fillColor: Map.getColor(feature.properties.count), weight: 2, opacity: 1, color: 'white', dashArray: '1', fillOpacity: 0.7 }; 
+        },
+
+        highlightFeature: function(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera) {
+                layer.bringToFront();
+            }
+        },
+
+        
+        GetGeoJSon: function () {
+            return _geojson;
+        },
+
+        SetGeoJSon: function (value) {
+           _geojson = value;
+        },
+
+        resetHighlight: function (e) {
+            _geojson.resetStyle(e.target);
+        },
+
+        zoomToFeature: function (e) {
+            map.fitBounds(e.target.getBounds());
+        },
+
+        onEachFeature: function(feature, layer) {
+            layer.on({
+                mouseover: Map.highlightFeature,
+                mouseout: Map.resetHighlight,
+                click: Map.zoomToFeature
+            });
+>>>>>>> 57b8c6b506564be56018f0e5676ae75c53571ce9
         }
+
     }
 })();
