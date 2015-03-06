@@ -10,6 +10,7 @@ Map = (function () {
     var _popup;
     var _openPropertyInfoBubble = false;
     var _geojson;
+    var _currentMap;
 
     var _layerTypes = {
         NORMAL: "normal.day",
@@ -302,6 +303,7 @@ Map = (function () {
             };
 
             L.control.layers(baseLayers).addTo(map);
+            _currentMap = map;
             return map;
         },
 
@@ -382,7 +384,7 @@ Map = (function () {
         },
 
         zoomToFeature: function (e) {
-            map.fitBounds(e.target.getBounds());
+            _currentMap.fitBounds(e.target.getBounds());
         },
 
         onEachFeature: function(feature, layer) {
@@ -391,7 +393,6 @@ Map = (function () {
                 mouseout: Map.resetHighlight,
                 click: Map.zoomToFeature
             });
->>>>>>> 57b8c6b506564be56018f0e5676ae75c53571ce9
         }
 
     }
