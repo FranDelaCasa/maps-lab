@@ -1,7 +1,7 @@
 #peninsula{
 	position: absolute; 
-	left: 40px; 
-	top: 40px; 
-	height: 600px; 
-	width: 1200px;
+	left: 0px; 
+	top: 0px; 
+	bottom: 0;
+	right: 0;
 }
