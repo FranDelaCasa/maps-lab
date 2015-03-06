@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="../SearchMap/css/map.css">
-		<link rel="stylesheet" type="text/css" href="../SearchMap/css/leaflet.css">
-		<link rel="stylesheet" type="text/css" href="../SearchMap/css/markerCluster.css">
+		<link rel="stylesheet" type="text/css" href="../maps-lab/css/map.css">
+		<link rel="stylesheet" type="text/css" href="../maps-lab/css/leaflet.css">
+		<link rel="stylesheet" type="text/css" href="../maps-lab/css/markerCluster.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="../SearchMap/scripts/leaflet.js"></script>
-		<script src="../SearchMap/scripts/leaflet.markercluster.js"></script>
-		<!--<script src="../SearchMap/scripts/values.js"></script>-->
-		<script src="../SearchMap/scripts/map.js"></script>
+		<script src="../maps-lab/scripts/leaflet.js"></script>
+		<script src="../maps-lab/scripts/leaflet.markercluster.js"></script>
+		<!--<script src="../maps-lab/scripts/values.js"></script>-->
+		<script src="../maps-lab/scripts/map.js"></script>
 	</head>
 	<body>
 		<div id='container'>
@@ -16,41 +16,18 @@
 			<div id='canarias'></div>
 		</div>	
 
-				<script type="text/javascript">
-			var conifPeninsulaMap = {
+		<script type="text/javascript">
+			var configPeninsulaMap = {
 				divId : 'peninsula',
-				        zoomable: true,
-        latitude: 40.4964,
-        longitude: -7.5129,
-        pinable: false,
-        drawable: false,
-        hasPois: false,
-        zoom: 6
+		        zoomable: true,
+		        latitude: 40.4964,
+		        longitude: -7.5129,
+		        pinable: false,
+		        drawable: false,
+		        hasPois: false,
+		        zoom: 6
 			};
-			var peninsulaMap = Map.CreateMap(conifPeninsulaMap);
-
-			//Map.AddPoisToMap(peninsulaMap,listOfPois);
-
-			var conifCanariasMap = {
-				divId : 'canarias',
-				        zoomable: true,
-        latitude: 28.4915637,
-        longitude: -15.82913040,
-        pinable: false,
-        drawable: false,
-        hasPois: false,
-        zoom: 7
-			};
-			var canariasMap = Map.CreateMap(conifCanariasMap);
-
-		$("#peninsula" ).mouseover(function() {
-			  $("#canarias" ).css("opacity","0.4");
-		});
-
-		$("#peninsula" ).mouseout(function() {
-			  $("#canarias" ).css("opacity","1");
-		});
-
+			var peninsulaMap = Map.CreateMap(configPeninsulaMap);
 		</script>
 	</body>
 </html>
